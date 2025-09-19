@@ -1,0 +1,9 @@
+**/*.log
+**/User_Manual/
+src/styles.css
+*-*
+*SRS*
+*SDD*
+/README.md 
+# I don't know how to do the
+# 'Any README files not in the root directory
