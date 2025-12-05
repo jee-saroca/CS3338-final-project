@@ -1,9 +1,9 @@
 CS3338 Final Project - Group 15 - Campus Navigation Using Augmented Reality
 
 Team:
-Jesse Saroca
-Thomas Stender
-Brandon Polanco
+Jesse Saroca,
+Thomas Stender,
+Brandon Polanco,
 Taiten McKiver
 
 Jira link: https://cs3338-group-15.atlassian.net/jira/software/projects/CNUAR/boards/100
