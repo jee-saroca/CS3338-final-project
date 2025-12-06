@@ -5,8 +5,9 @@
 \usepackage{titling}
 
 \geometry{a4paper, margin=1in}
+\graphicspath{ {../../assets/SDD_images/} }
 
-\title{Campus AR NAV\\
+\title{EagleNAV\\
 Software Design Document}
 \author{
 	Taiten McKiver\\
@@ -22,7 +23,7 @@ Software Design Document}
 \setlength{\droptitle}{6cm}
 
 \pagestyle{fancy}
-\fancyhead[L]{Campus AR NAV SDD}
+\fancyhead[L]{EagleNAV SDD}
 \fancyhead[R]{Page \thepage}
 \fancyfoot[C]{}
 
@@ -55,7 +56,7 @@ Software Design Document}
 \section{Introduction}
 
 \subsection{Purpose}
-The purpose of this document is to provide a detailed description of the Campus AR NAV (CARN). This document will outline the system architecture, user interface, and intended audience for the application.
+The purpose of this document is to provide a detailed description of the EagleNAV. This document will outline the system architecture, user interface, and intended audience for the application.
 
 \subsection{Intended Audience}
 The intended audience for this document includes:
@@ -67,49 +68,60 @@ The intended audience for this document includes:
 \end{itemize}
 
 \subsection{Overview}
-The CARN will be a mobile application that allows users to use their phone camera to navigate through their college campuses. The application will provide a user-friendly interface and clear instructions that will guide the user. 
-\subsection{References}
-See the references section for a list of documents and resources referenced in this document.
-\subsection{Definitions, Acronyms, and Abbreviations}
-See the glossary section for definitions of terms, acronyms, and abbreviations used in this document.
-\newpage
+The EagleNAV will be a mobile application that allows users to use their phone camera to navigate through their college campuses. The application will provide a user-friendly interface and clear instructions that will guide the user. 
 
 % SECTION 2
 \section{System Architecture}
+\includegraphics{dfd_1}
 \subsection{Workflow}
+The user workflow of the EagleNAV will consist of:
+\begin{itemize}
+	\item User authorization to use location and camera
+	\item User submission of destination choice
+	\item EagleNAV sends a routing request
+	\item EagleNAV directs user towards their destination
+\end{itemize}
 
-\subsection{Site Breakdown}
-
-
-\subsection{Architecture Overview}
-
+\subsection{App Breakdown}
+The Accessibility Campus Navigation System is divided into several key areas:
+\begin{itemize}
+	\item Route Planning Subsystem: Uses the local routing server and Route Planner Engine provide the assembled route. 
+	\item Guidance Subsystem: Uses sensors to give a consistent direction to the inputted location.
+	\item Alerts Subsystem: Uses campus records to indicate obstructions in routes to find a new faster route.
+	\item Feedback Subsystem: User inputted feedback reports.
+\end{itemize}
+\includegraphics{system_architecture}
 \subsection{Data Flow - New Audit}
 
 % SECTION 3
 \section{User Interface}
 
 \subsection{How to Use}
-
-\subsubsection{Web Application}
-
-\subsubsection{Mobile Application}
-
+\begin{itemize}
+	\item Map: Includes a search bar and current location.
+	\item Camera: Find the navigation arrow in the augmented reality space.
+	\item Favorites: Saved places.
+	\item Alerts: List of active campus impacts in order to re-route user.
+	\item Settings: Change text size, contrast, haptic intensity, or captions.
+\end{itemize}
 \subsection{Database Explanation}
-
+The database for EagleNAV is stored in json files:
+\begin{itemize}
+	\item bookmarks.json - stores saved routes
+	\item points.jeojson - stores POI and custom landmarks
+\end{itemize}
 
 \section*{Glossary}
 \addcontentsline{toc}{section}{Glossary}
 \begin{description}
-    \item[\textbf{CARN}] - Campus AR NAV
     \item[\textbf{AR}] - Augmented Reality
     \item[\textbf{NAV}] - Navigation 
+    \item[\textbf{POI}] - Point of Interest
 \end{description}
-\newpage
 
 \addcontentsline{toc}{section}{References}
 \begin{thebibliography}{9}
-     Ascent - Project. (2017). Cysun.org. https://ascent.cysun.org/project/project/view/72
-     Ascent - Project. (2022). Cysun.org. https://ascent.cysun.org/project/project/view/44
+     Ascent - Project. (2025-2026). Cysun.org. https://ascent.cysun.org/project/project/view/248
 \end{thebibliography}
 
 \end{document}
