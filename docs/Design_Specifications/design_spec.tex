@@ -1,0 +1,98 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{indentfirst}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+
+\geometry{a4paper, margin=1in}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{Design Specification}
+\fancyfoot[C]{\thepage}
+
+\title{Design Specification}
+\author{Jesse Saroca, Thomas Stender, Brandon Polanco, Taiten McKiver}
+\date{December 2025}
+
+\begin{document}
+\maketitle
+
+\section{Overview}
+EagleNav is a cross platform mobile application that provides accessible campus navigation.
+The system consists of a Flutter mobile frontend, a backend API, and read only
+integration with university accessibility and building data.
+
+\section{UI/UX Pages and Components}
+
+\begin{itemize}
+    \item \textbf{Landing Page} – Start navigation, saved routes, settings.
+    \item \textbf{Login/SSO Page (Optional)} – Imports schedule data.
+    \item \textbf{Map Page} – Interactive map, accessibility overlay.
+    \item \textbf{Route Selection Page} – Start/end selection and route options.
+    \item \textbf{Turn-by-Turn Navigation} – Visual, audio, and haptic guidance.
+    \item \textbf{Alerts Page} – Displays campus accessibility notifications.
+    \item \textbf{Saved Routes Page} – Locally stored user shortcuts.
+    \item \textbf{Settings Page} – Accessibility preferences and app controls.
+\end{itemize}
+
+\section{System Components}
+
+\begin{itemize}
+    \item \textbf{Mobile Frontend (Flutter)} – UI, map rendering, local storage.
+    \item \textbf{Backend API} – Routing, alerts, building data endpoints.
+    \item \textbf{University Data Services} – Accessibility + building metadata.
+\end{itemize}
+
+\section{Dependencies and Libraries}
+
+\subsection{Frontend (Flutter)}
+\begin{itemize}
+    \item \texttt{flutter\_map} or \texttt{google\_maps\_flutter}
+    \item \texttt{http}
+    \item \texttt{provider}
+    \item \texttt{shared\_preferences}
+    \item \texttt{geolocator}
+    \item \texttt{flutter\_tts}
+\end{itemize}
+
+\subsection{Backend}
+Python:
+\begin{itemize}
+    \item \texttt{fastapi}, \texttt{uvicorn}, \texttt{requests}
+\end{itemize}
+
+Or Node:
+\begin{itemize}
+    \item \texttt{express}, \texttt{axios}, \texttt{cors}
+\end{itemize}
+
+\subsection{System Requirements}
+\begin{itemize}
+    \item Flutter SDK
+    \item Android SDK
+    \item Python 3.10 or Node.js 18+
+    \item Git
+\end{itemize}
+
+\section{Docker Container Requirements}
+
+\begin{itemize}
+    \item Base image: \texttt{python:3.10} or \texttt{node:18}
+    \item Install Flutter SDK + Android command line tools
+    \item Install backend libraries (FastAPI or Express)
+    \item System tools: \texttt{curl}, \texttt{git}, \texttt{openjdk-11-jdk}
+    \item Environment variables:
+    \begin{itemize}
+        \item \texttt{API\_KEY}
+        \item \texttt{UNIVERSITY\_DATA\_ENDPOINT}
+    \end{itemize}
+\end{itemize}
+
+\section{Conclusion}
+This design spec outlines the essential UI pages, major components,
+dependencies, and Docker requirements needed for EagleNav to run consistently in
+development or deployment environments.
+
+\end{document}
