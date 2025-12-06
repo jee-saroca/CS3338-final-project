@@ -1,0 +1,135 @@
+\documentclass[12pt]{article}
+
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{titling}
+
+\geometry{a4paper, margin=1in}
+
+\title{EagleNAV\\
+Software Requirement Specification}
+\author{
+	Taiten McKiver\\
+	Brandon Polanco\\
+	Jesse Saroca\\
+	Thomas Stender
+	}
+\date{November 2025}
+
+\setlength{\droptitle}{6cm}
+
+\pagestyle{fancy}
+\fancyhead[L]{Eagle NAV SRS}
+\fancyhead[R]{Page \thepage}
+\fancyfoot[C]{}
+
+\begin{document}
+
+\begin{titlepage}
+\maketitle
+\thispagestyle{empty}
+\end{titlepage}
+
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+
+\section{Version History}
+\begin{center}
+\begin{tabular}{|c|p{8cm}|c|}
+\hline
+\textbf{Version} & \textbf{Description} & \textbf{Date} \\ \hline
+1.0 & Initial draft for Snapshot 1 (UI setup, AR integration start, DB setup, tracking implementation). & 12/5/25\\ \hline
+\end{tabular}
+\end{center}
+
+\newpage
+\section{Introduction}
+
+\subsection{Purpose}
+The purpose of this Software Requirements Specification (SRS) is to describe the initial requirements for the Eagle NAV (ENAV) system as of Snapshot 1. This document defines what the system is expected to do at this stage, which includes the basic user interface, early augmented reality functionality, location tracking, and the database used to store campus locations and routes.
+
+\subsection{Intended Audience}
+This document is intended for:
+\begin{itemize}
+    \item \textbf{Developers} 
+    \item \textbf{Testers}
+    \item \textbf{Project members} 
+    \item \textbf{Instructors}
+\end{itemize}
+
+\subsection{Overview}
+ENAV is a mobile application that allows easy navigation of a college campus via the use of an AR-integrated smart device (phone, tablet, etc.). The application will contain a clean user interface and clear instructions that guide the user. 
+
+\newpage
+\section{External Interface Requirements}
+
+\subsection{User Interface}
+For Snapshot 1, the Eagle NAV (ENAV) application will provide a simple, but functional UI to support early features. The user interface includes: 
+
+\begin{itemize}
+    \item \textbf{Home Screen} — Displays initial home menu options and navigation to core ENAV features such as a campus location directory and AR view. 
+    \item \textbf{AR Camera View} — Gains access to the device camera and features basic AR elements. This includes markers and labels used for early testing of AR functionality. 
+    \item \textbf{Locations List} — Allows users to browse a list of buildings and other points of interest stored in the database. This list helps users confirm that the location database is correctly populated during Snapshot 1.
+    \item \textbf{Basic Navigation Menu} — Provides simple links to settings or future pages that will be built upon in later snapshots.
+\end{itemize}
+
+The current interface focuses on usability, providing a solid foundation for later features such as route mapping and refined AR overlays.
+
+\subsection{Software Interfaces}
+ENAV interacts with several key software components and system services to support the Snapshot 1 features:
+
+\begin{itemize}
+    \item \textbf{Android Camera API} — Provides access to the device camera to generate the live video feed needed for AR functionality.
+    \item \textbf{GPS and Location Services} — Supplies the user’s current coordinates, which enables location tracking and supports future navigation systems.
+    \item \textbf{Local Database Interface} — Communicates with the on-device database that stores building names, classrooms, offices, and coordinate data. This will allow the application to retrieve and display location information.
+\end{itemize}
+
+During Snapshot 1, all information processing, AR testing, and location tracking are handled locally on the device. Network interactions may be introduced in later snapshots.
+
+\newpage
+\section{Legal and Ethical Considerations}
+
+\subsection{Data Storage and Privacy}
+Eagle NAV (ENAV) collects almost no data during Snapshot 1. The following considerations apply:
+
+\begin{itemize}
+    \item \textbf{No Personal Data Stored} — The application does not store personal use information or account details during Snapshot 1.
+    \item \textbf{Temporary Location Use} — GPS data is accessed only while the user is actively using AR or location features. This information is used solely for positioning and is not saved.
+    \item \textbf{Local Database Only} — All stored data consists exclusively of public campus information such as building names, classroom numbers, and coordinate points.
+    \item \textbf{No Cloud Storage Yet} — Snapshot 1 does not use remote servers, cloud databases, or external services, and there is no risk of unauthorized access. 
+\end{itemize}
+
+The app will not function without the necessary Android system requirements (camera and location access), but data from these sensors will not be stored in any way. 
+
+\subsection{Legal and Ethical Issues}
+Several legal and ethical considerations influence the design of ENAV:
+
+\begin{itemize}
+    \item \textbf{User Consent} — The application must request consent from the user before accessing the camera or location services. 
+    \item \textbf{Safe AR Usage} — Because AR overlays can block real-world objects, the system encourages users to be aware of their surroundings.  
+    \item \textbf{Accessibility Considerations} — The interface should be usable by a wide range of users, including those with visual or mobility impairments.
+    \item \textbf{Sensitive Locations} — The system avoids storing restricted campus areas unless approved by campus authorities.
+\end{itemize}
+
+As the project progresses into later snapshots, additional legal and ethical requirements may need to be revisited and/or expanded.
+
+\newpage
+\section{Glossary}
+
+\begin{center}
+\begin{tabular}{|c|p{10cm}|}
+\hline
+\textbf{Acronym} & \textbf{Definition} \\ \hline
+ENAV & Eagle Navigation\\ \hline
+AR & Augmented Reality \\ \hline
+GPS & Global Positioning System\\ \hline
+UI & User Interface \\ \hline
+API & Application Programming Interface \\ \hline
+SRS & Software Requirements Specification \\ \hline
+\end{tabular}
+\end{center}
+
+
+\end{document}
