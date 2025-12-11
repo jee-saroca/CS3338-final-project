@@ -1,0 +1,38 @@
+services:
+  frontend:
+    image: node:20-alpine
+    container_name: enav-frontend
+    working_dir: /app
+    ports:
+      - "3000:3000"
+    environment:
+      FRONTEND_FRAMEWORK: React.js
+      FRONTEND_DEPENDENCIES: react,react-dom,react-scripts
+      CSS_FRAMEWORK: Bootstrap
+      PACKAGE_MANAGER: npm
+    depends_on:
+      - backend
+
+  backend:
+    image: node:20-alpine
+    container_name: enav-backend
+    working_dir: /app
+    ports:
+      - "5000:5000"
+    environment:
+      BACKEND_FRAMEWORK: Express.js
+      BACKEND_DEPENDENCIES: express,body-parser,cors,dotenv
+      AUTH_DEPENDENCIES: jsonwebtoken
+      DATABASE_CLIENT: pg
+    depends_on:
+      - enav-db
+
+  enav-db:
+    image: postgres:16-alpine
+    container_name: enav-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: enavuser
+      POSTGRES_PASSWORD: enavpassword
+      POSTGRES_DB: enavdb
