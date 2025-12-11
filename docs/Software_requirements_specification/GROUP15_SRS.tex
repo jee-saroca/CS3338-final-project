@@ -40,7 +40,15 @@ Software Requirement Specification}
 \begin{tabular}{|c|p{8cm}|c|}
 \hline
 \textbf{Version} & \textbf{Description} & \textbf{Date} \\ \hline
-1.0 & Initial draft for Snapshot 1 (UI setup, AR integration start, DB setup, tracking implementation). & 12/5/25\\ \hline
+1.0 & Initial draft for Snapshot 4 (UI setup, AR integration start, DB setup, tracking implementation). & 12/5/25\\ 
+\hline
+1.1 & Updated SRS for Snapshot 2. Added new feature requirements, updated UI descriptions, enhanced software interface requirements, and documented additional dependencies. & 11/7/2024 \\
+\hline
+1.2 & Updated SRS for Snapshot 3. Included second major feature, revised workflow details, expanded data handling requirements, and refined system behavior. & 12/8/2024 \\
+\hline
+1.3 & Final revision for Snapshot 4. Added finishing requirements, clarified system limitations, documented future work, and finalized all SRS sections. & 12/10/2024 \\
+\hline
+
 \end{tabular}
 \end{center}
 
@@ -48,7 +56,7 @@ Software Requirement Specification}
 \section{Introduction}
 
 \subsection{Purpose}
-The purpose of this Software Requirements Specification (SRS) is to describe the initial requirements for the Eagle NAV (ENAV) system as of Snapshot 1. This document defines what the system is expected to do at this stage, which includes the basic user interface, early augmented reality functionality, location tracking, and the database used to store campus locations and routes.
+The purpose of this Software Requirements Specification (SRS) is to describe the initial requirements for the Eagle NAV (ENAV) system as of Snapshot 4. This document defines what the system is expected to do at this stage, which includes the updated user interface, early augmented reality functionality, location tracking, and the database used to store campus locations and routes.
 
 \subsection{Intended Audience}
 This document is intended for:
@@ -66,19 +74,19 @@ ENAV is a mobile application that allows easy navigation of a college campus via
 \section{External Interface Requirements}
 
 \subsection{User Interface}
-For Snapshot 1, the Eagle NAV (ENAV) application will provide a simple, but functional UI to support early features. The user interface includes: 
+For Snapshot 4, the Eagle NAV (ENAV) application will provide a simple, but functional UI to support early features. The user interface includes: 
 
 \begin{itemize}
     \item \textbf{Home Screen} — Displays initial home menu options and navigation to core ENAV features such as a campus location directory and AR view. 
-    \item \textbf{AR Camera View} — Gains access to the device camera and features basic AR elements. This includes markers and labels used for early testing of AR functionality. 
-    \item \textbf{Locations List} — Allows users to browse a list of buildings and other points of interest stored in the database. This list helps users confirm that the location database is correctly populated during Snapshot 1.
-    \item \textbf{Basic Navigation Menu} — Provides simple links to settings or future pages that will be built upon in later snapshots.
+    \item \textbf{AR Camera View} — Gains access to the device camera and features basic AR elements. This includes markers and labels, as well as the AR navigation feature. 
+    \item \textbf{Locations List} — Allows users to browse a list of buildings and other points of interest stored in the database, as well as navigation directives, i.e., optimal routes. This list helps users test locations and routes stored in the database as of Snapshot 4.
+    \item \textbf{Basic Navigation Menu} — Provides links to settings, navigation selection, and AR tracking. 
 \end{itemize}
 
-The current interface focuses on usability, providing a solid foundation for later features such as route mapping and refined AR overlays.
+The current interface focuses on early testing of the user interface, AR integration, and tracking/navigation.
 
 \subsection{Software Interfaces}
-ENAV interacts with several key software components and system services to support the Snapshot 1 features:
+ENAV interacts with several key software components and system services to support the Snapshot 4 features:
 
 \begin{itemize}
     \item \textbf{Android Camera API} — Provides access to the device camera to generate the live video feed needed for AR functionality.
@@ -86,19 +94,19 @@ ENAV interacts with several key software components and system services to suppo
     \item \textbf{Local Database Interface} — Communicates with the on-device database that stores building names, classrooms, offices, and coordinate data. This will allow the application to retrieve and display location information.
 \end{itemize}
 
-During Snapshot 1, all information processing, AR testing, and location tracking are handled locally on the device. Network interactions may be introduced in later snapshots.
+During Snapshot 4, all information processing, AR testing, and location tracking are handled locally on the device. Network interactions may be introduced in later snapshots.
 
 \newpage
 \section{Legal and Ethical Considerations}
 
 \subsection{Data Storage and Privacy}
-Eagle NAV (ENAV) collects almost no data during Snapshot 1. The following considerations apply:
+Eagle NAV (ENAV) collects almost very little data during Snapshot 4. The following considerations apply:
 
 \begin{itemize}
-    \item \textbf{No Personal Data Stored} — The application does not store personal use information or account details during Snapshot 1.
+    \item \textbf{No Personal Data Stored} — The application does not store personal use information or account details during Snapshot 4.
     \item \textbf{Temporary Location Use} — GPS data is accessed only while the user is actively using AR or location features. This information is used solely for positioning and is not saved.
     \item \textbf{Local Database Only} — All stored data consists exclusively of public campus information such as building names, classroom numbers, and coordinate points.
-    \item \textbf{No Cloud Storage Yet} — Snapshot 1 does not use remote servers, cloud databases, or external services, and there is no risk of unauthorized access. 
+    \item \textbf{No Cloud Storage Yet} — Snapshot 4 does not use remote servers, cloud databases, or external services, and there is no risk of unauthorized access. 
 \end{itemize}
 
 The app will not function without the necessary Android system requirements (camera and location access), but data from these sensors will not be stored in any way. 
