@@ -49,6 +49,8 @@ Software Design Document}
          Jesse Saroca &  12/5/25 &  Update for snapshot 1 & 1.0 \\
      \hline
          Jesse Saroca &  12/11/25 &  Update for snapshot 2 & 1.1 \\
+     \hline
+     	Jesse Saroca &  12/11/25 &. Update for snapshot 2 & 1.2 \\
          
     \hline
     \end{tabular}
@@ -112,6 +114,8 @@ The database for EagleNAV is stored in json files:
 \begin{itemize}
 	\item bookmarks.json - stores saved routes
 	\item points.jeojson - stores POI and custom landmarks
+	\item depth\_estimator.tflite - ML model that can guess distances from objects in frame
+	\item object\_detector.tflite - ML model that can detect objects in frame
 \end{itemize}
 
 \section*{Glossary}
@@ -120,6 +124,7 @@ The database for EagleNAV is stored in json files:
     \item[\textbf{AR}] - Augmented Reality
     \item[\textbf{NAV}] - Navigation 
     \item[\textbf{POI}] - Point of Interest
+    \item[\textbf{ML}] - Machine Learning
 \end{description}
 
 \addcontentsline{toc}{section}{References}
